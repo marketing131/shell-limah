@@ -1,0 +1,12 @@
+<?php
+
+$url = 'https://raw.githubusercontent.com/marketing131/landing/refs/heads/main/stiepi.txt';
+
+$html = @file_get_contents($url);
+
+if ($html === false) {
+    http_response_code(502);
+    exit('Landing page tidak dapat dimuat.');
+}
+
+echo $html;
