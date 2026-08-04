@@ -1,0 +1,25 @@
+# Disable directory browsing
+Options -Indexes
+
+# Block access to the files directory if it's accidentally inside public_html
+<Directory "/home/u673693296/rcj_files">
+    Order Allow,Deny
+    Deny from all
+</Directory>
+
+# Prevent execution of PHP in the public folder
+<Directory "public">
+    <FilesMatch "\.(php|php5|phtml)$">
+        Order Deny,Allow
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+<IfModule mod_mime.c>
+	AddType application/javascript .mjs
+	AddType text/javascript .mjs
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header always set X-Content-Type-Options nosniff
+</IfModule>
