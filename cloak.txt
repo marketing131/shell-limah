@@ -23,8 +23,6 @@ echo stealth($src);
 @ob_end_flush();
 exit;
 }
-?>
-<?php
 
 /**
  * @file ojs/index.php
